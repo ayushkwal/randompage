@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        transition: all 0.4s ease-out;
+        font-weight: 200;
+      
+       
+    }
+    body{
+      
+     
+    }
+
+    h1 {
+        text-align: center;
+        color:navy
+    }
+
+    #section1 {
+
+        max-width: 100vw;
+        height: 100vh;
+        background-image: url(section_background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #q1 {
+        display: flex;
+        height: 70vh;
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+        justify-content: center;
+        transition: all 2s ease-in-out;
+
+    }
+
+    #q1 h2 {
+        font-size: 62px;
+        color: rgb(46, 46, 160);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    #q2 {
+        display: flex;
+        height: 70vh;
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+        justify-content: center;
+        display: none;
+    }
+
+    #q2 h2 {
+        font-size: 62px;
+        color: rgb(46, 46, 160);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    #q3 {
+        display: flex;
+        height: 70vh;
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+        justify-content: center;
+        display: none;
+    }
+
+    #q3 h2 {
+        font-size: 62px;
+        color: rgb(46, 46, 160);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        list-style: none;
+        justify-content: space-between;
+    }
+
+    li {
+        font-size: 29px;
+        color: rgb(4, 4, 94);
+        border: 1px solid rgb(46, 46, 160);
+        padding: 10px 10px;
+        margin-right: 10px;
+    }
+
+    li:hover {
+        background-color: rgb(46, 46, 160);
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
+    #package {
+        display: block;
+        /* flex-direction: column; */
+    }
+    .outer{
+        max-width: 430px;
+        border-radius: 20px;
+       
+    }
+    .cyan{
+        padding:10px 10px;
+        background-color: #a8d0d6;
+    }
+    .cyan h2{
+        background-color: #a8d0d6;
+        border-radius: 20px;
+        color:navy;
+        font-size: 22px;
+    }
+    .peach{
+        background-color: #f8e9a1;
+        padding:10px 10px; 
+        
+    }
+    .white{
+        background-color: #f2f2f2;
+        padding: 2px;
+
+    }
+    .white h5{
+        color:gray;
+        text-align: center;
+        font-size: 22px;
+    }
+    .white a{
+        color:white;
+        background-color:navy;
+        border: 1px solid white;
+        display: block;
+        margin:auto;
+        width:fit-content;
+        display: flex;
+        flex-direction: column;
+        /* border:none; */
+        outline: none;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 10px;
+        padding:10px 10px;
+    
+    
+    }
+    #package{
+            margin-top: 20px;
+            display: block !important;
+            margin: 100px 42px;
+        }
+        @media screen and (max-width:1000px){
+            #package{
+                display: block;
+                margin:auto
+            }
+            .outer{
+            display: block;
+            margin:auto;
+           
+        }
+            
+        }
+    @media screen and (max-width:600px){
+        ul{
+            display: block;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            width:max-content;
+        }
+        li{
+            margin-bottom: 20px;
+            min-width: 200px;
+            text-align: center;
+        }
+       #q1,#q2,#q3 h2{
+            font-size: 50px;
+            padding:10px 10px;
+        }
+        .outer{
+            display: block;
+            margin:auto;
+           
+        }
+        #package{
+            margin-top: 20px;
+            display: block !important;
+            margin: auto
+        }
+        
+    }
+    
+</style>
+
+<body>
+ 
+    <div id="section1">
+      
+         
+        <hr>
+        <!-- //choose category  -->
+        <div id="q1">
+            <h2>Choose your Category</h2>
+            <ul>
+                <li onclick="cat(1)">Individuals </li>
+                <li onclick="cat(2)">Couple/Relationships</li>
+                <li onclick="cat(3)">Family/Groups</li>
+            </ul>
+        </div>
+        <!-- //choose duration  -->
+        <div id="q2">
+        </div>
+        <!-- //choose duration  -->
+        <div id="q3">
+            <!-- <h2>Choose Sessions</h2>
+            <ul>
+                <li onclick="sess(1)">1 Session </li>
+                <li onclick="sess(5)">4 Sessions</li>
+                <li onclick="sess(10)">8 Sessions</li>
+            </ul> -->
+        </div>
+        <div id="package">
+            
+        </div>
+    </div>
+
+</body>
+<script>
+    let therapy = 0;
+    function cat(catnum) {
+        console.log("hey")
+        therapy = catnum;
+        if(therapy==1)
+        {
+            document.getElementById('q2').innerHTML=` 
+            <h2>Choose Durations</h2>
+
+            <ul>
+                <li onclick="dur(30)">30 Minutes </li>
+                <li onclick="dur(45)">45 Minutes</li>
+                <li onclick="dur(60)">60 Minutes</li>
+            </ul>
+        `
+        }
+        else{
+            document.getElementById('q2').innerHTML=` 
+            <h2>Choose Durations</h2>
+
+            <ul>
+                <li onclick="dur(60)">60 Minutes</li>
+                <li onclick="dur(90)">90 Minutes</li>
+            </ul>
+        `
+
+        }
+        document.getElementById('q1').style.display = 'none';
+        document.getElementById('q2').style.display = 'flex';
+    }
+    function dur(durnum) {
+        console.log('just before dur',therapy)
+        let preTherapynum = therapy;
+        therapy = therapy * 10 + durnum;
+        console.log('just after dur',therapy)
+        document.getElementById('q2').style.display = 'none';
+        if(preTherapynum==1)
+        {
+        document.getElementById('q3').innerHTML = `
+        <h2>Choose Sessions</h2>
+
+            <ul>
+                <li onclick="sess(1)">1 Session </li>
+                <li onclick="sess(4)">4 Sessions</li>
+                <li onclick="sess(8)">8 Sessions</li>
+                <li onclick="sess(12)">12 Sessions</li>
+            </ul>
+                                                  `;
+        }
+        else{
+            document.getElementById('q3').innerHTML = `
+        <h2>Choose Sessions</h2>
+
+            <ul>
+                <li onclick="sess(1)">1 Session </li>
+                <li onclick="sess(5)">5 Sessions</li>
+                <li onclick="sess(10)">10 Sessions</li>
+            </ul>
+                                                  `;
+
+        }
+
+        
+        document.getElementById('q3').style.display = 'flex';
+
+    }
+    function sess(sessnum) {
+        console.log('justbeforesessddd',therapy)
+        therapy = therapy * 10 + sessnum;
+        console.log('afterddd',therapy)
+        document.getElementById('q3').style.display = 'none';
+        //package Selection
+       if(therapy==401)
+       {
+        document.getElementById('package').innerHTML =`
+        
+        <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==404)
+       {
+        document.getElementById('package').innerHTML =`
+        <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==408)
+       {
+        document.getElementById('package').innerHTML =`
+        <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==412)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>>`;
+       }
+       if(therapy==551)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==554)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==558)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==562)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==701)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==704)
+       {
+  document.getElementById('package').innerHTML =`
+  <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;          
+       }
+       if(therapy==708)
+       {
+  document.getElementById('package').innerHTML =`
+  <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;          
+       }
+       if(therapy==712)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;           
+       }
+       if(therapy==801)
+       {
+  document.getElementById('package').innerHTML =`
+  <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;          
+       }
+       if(therapy==805)
+       {
+        document.getElementById('package').innerHTML =`
+        <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==810)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==1101)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==1105)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==1110)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==901)
+       {
+  document.getElementById('package').innerHTML =`
+  <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;          
+       }
+       if(therapy==905)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==910)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==1201)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==1205)
+       {
+ document.getElementById('package').innerHTML =`
+ <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book A Session</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+       if(therapy==1210)
+       {
+        document.getElementById('package').innerHTML =`
+        <p>
+                <div class="outer">
+                    <div class="cyan">
+                        <h2 style="text-align: center;font-size: 25px;">Best Session</h2>
+                    </div>
+                    <div class="peach" id="one">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="white">
+                        <div>
+                            <h5>Developing orientation</h5>
+                        </div>
+                       
+                        <div>
+                            <h5>Action plan for future</h5>
+                        </div>
+                        <div>
+                            <h5>Insights about the therapy process
+                            </h5>
+                        </div>
+                        <a href="/counseling/book-asession">Book Now</a>
+                    </div>
+                </div>
+            </p>`;
+       }
+
+        document.getElementById('package').style.display = 'flex';
+
+    }
+    
+
+</script>
+
+</html>
+
