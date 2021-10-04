@@ -33,12 +33,16 @@
 
     #q1 {
         display: flex;
-        height: 70vh;
+        height: fit-content;
+        min-height: 100vh;
         flex-direction: column;
         margin: auto;
         width: 100%;
         justify-content: center;
         transition: all 2s ease-in-out;
+        background-image: url("image2.png");
+          background-repeat: no-repeat;
+          background-size: cover;
 
     }
 
@@ -50,12 +54,17 @@
 
     #q2 {
         display: flex;
-        height: 70vh;
+        height: fit-content;
+        min-height:100vh;
         flex-direction: column;
         margin: auto;
         width: 100%;
         justify-content: center;
         display: none;
+        background-image: url("image2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
     }
 
     #q2 h2 {
@@ -91,15 +100,19 @@
     li {
         font-size: 29px;
         color: rgb(4, 4, 94);
-        border: 1px solid rgb(46, 46, 160);
+        /* border: 1px solid rgb(46, 46, 160); */
         padding: 10px 10px;
         margin-right: 10px;
+        cursor: pointer;
+        text-align: center;
+        
     }
 
     li:hover {
-        background-color: rgb(46, 46, 160);
-        color: white;
-        border: 1px solid white;
+        /* background-color: rgb(46, 46, 160); */
+        color: transparent;
+        /* border: 1px solid white; */
+        transform: scale(1.1);
         cursor: pointer;
     }
 
@@ -139,16 +152,17 @@
     }
 
     .peach {
-        background-color: #f8e9a1;
+        background-color: #a1a1ff;
         padding: 5px 10px;
 
     }
 
     .white {
         background-color: #fff;
-        padding: 10px 10px;
+        padding: 0px 1px;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
+        margin:2px 2px;
 
     }
 
@@ -224,6 +238,8 @@
             margin-bottom: 20px;
             min-width: 200px;
             text-align: center;
+            border:1px solid navy;
+
         }
 
         #q1,
@@ -255,18 +271,18 @@
     <div id="section1">
 
 
-        <hr>
         <!-- //choose category  -->
         <div id="q1">
             <h2>Choose your Category</h2>
             <ul>
-                <li onclick="cat(1)">Individuals </li>
-                <li onclick="cat(2)">Couple/Relationships</li>
-                <li onclick="cat(3)">Family/Groups</li>
+                <li onclick="cat(1)"><img src="3.png" width="150px" height="150px">Individuals </li>
+                <li onclick="cat(2)"><img src="2.png" width="150px" height="150px">Couples/Relationship</li>
+                <li onclick="cat(3)"><img src="4.png" width="150px" height="150px">Family/Groups</li>
             </ul>
         </div>
         <!-- //choose duration  -->
         <div id="q2">
+           
         </div>
         <!-- //choose duration  -->
         <div id="package">
@@ -284,21 +300,23 @@
             document.getElementById('q2').innerHTML = ` 
             <h2>Choose Durations</h2>
 
-            <ul>
+            <ul style="z-index:2">
                 <li onclick="dur(30)">30 Minutes </li>
                 <li onclick="dur(45)">45 Minutes</li>
                 <li onclick="dur(60)">60 Minutes</li>
             </ul>
+            <img src="1.png" width="500px" height="500px" style="text-align:center;margin:30px 30px;margin-top:-140px;">
         `
         }
         else {
             document.getElementById('q2').innerHTML = ` 
             <h2>Choose Durations</h2>
 
-            <ul>
+            <ul style="z-index:2">
                 <li onclick="dur(60)">60 Minutes</li>
                 <li onclick="dur(90)">90 Minutes</li>
             </ul>
+            <img src="1.png" width="500px" height="500px" style="text-align:center;margin-top:-140px;">
         `
 
         }
@@ -320,12 +338,7 @@
                     <div class="cyan">
                         <h2 style="text-align: center;font-size: 25px;">Break The Barrier(1 Session)</h2>
                     </div>
-                    <div class="peach" id="one">
-                        <div>
-                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
-                            
-                        </div>
-                    </div>
+                    
                     <div class="white">
                         <div>
                             <h5>Identifying chief complaints </h5>
@@ -340,6 +353,12 @@
                         <div>
                             <h5>Psychoeducation for your needs</h5>
                         </div>
+                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div>
+                            <h2 style="text-align: center;font-size: 28px;">Best Price: ₹300</h2>
+                            
+                        </div>
+                    </div>
                         <a href="/counseling/book-asession">Book A Session</a>
                     </div>
                 </div>
