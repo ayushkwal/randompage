@@ -19,7 +19,8 @@
 
     h1 {
         text-align: center;
-        color: navy
+        color: navy;
+        color:#84d4ab
     }
 
     #section1 {
@@ -205,7 +206,7 @@
         margin-top: 20px;
         display: flex !important;
         margin: auto;
-        background-image: url("image1.png");
+        background-image: url(image1.png);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -333,6 +334,7 @@
         document.getElementById('q2').style.display = 'none';
         console.log('current code is', therapy)
         if (therapy == 40) {
+            document.getElementById('package').style.backgroundImage = `url("image2.png")`;
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
@@ -514,6 +516,7 @@
 
         }
         if (therapy == 55) {
+            document.getElementById('package').style.backgroundImage = `url("image2.png")`;
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
@@ -684,6 +687,7 @@
 
         }
         if (therapy == 70) {
+            document.getElementById('package').style.backgroundImage = `url("image2.png")`;
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
@@ -853,13 +857,12 @@
             document.getElementById('package').style.display = 'flex';
 
         }
-        if(therapy==80)
-        {
-           
+        if (therapy == 80) {
+            document.getElementById('package').style.backgroundImage = `url("image0.png")`;
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#fa98b0">
                         <h2 style="text-align: center;font-size: 25px;">Break The Barrier<br>1 Session</h2>
                     </div>
                    
@@ -875,7 +878,7 @@
                             <h5>Building Better Understanding</h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#ffe6ee">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price: ₹800</h2>
                             
@@ -889,7 +892,7 @@
             
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#fa98b0">
                         <h2 style="text-align: center;font-size: 25px;">Well Being <br>5 Sessions</h2>
                     </div>
                     
@@ -913,7 +916,7 @@
                             <h5>	Resolving Conflict
                             </h5>
                         </div>
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#ffe6ee">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹4000</del> ₹3600</h2>
                             
@@ -928,7 +931,7 @@
 
             <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan"  style="background-color:#fa98b0">
                         <h2 style="text-align: center;font-size: 25px;">	Restructure<br>10 Sessions</h2>
                     </div>
                    
@@ -958,7 +961,7 @@
                             </h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#ffe6ee">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹8000</del> ₹6800</h2>
                             
@@ -976,13 +979,12 @@
         }
 
 
-        if(therapy==110)
-        {
-           
+        if (therapy == 110) {
+            document.getElementById('package').style.backgroundImage = `url("image0.png")`;
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan"  style="background-color:#fa98b0">
                         <h2 style="text-align: center;font-size: 25px;">Break The Barrier<br>1 Session</h2>
                     </div>
                    
@@ -998,7 +1000,7 @@
                             <h5>Building Better Understanding</h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#ffe6ee">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price: ₹1200</h2>
                             
@@ -1012,7 +1014,7 @@
             
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan"  style="background-color:#fa98b0">
                         <h2 style="text-align: center;font-size: 25px;">Well Being <br>5 Sessions</h2>
                     </div>
                     
@@ -1036,7 +1038,7 @@
                             <h5>	Resolving Conflict
                             </h5>
                         </div>
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#ffe6ee">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹6000</del> ₹5400</h2>
                             
@@ -1051,7 +1053,7 @@
 
             <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan"  style="background-color:#fa98b0">
                         <h2 style="text-align: center;font-size: 25px;">	Restructure<br>10 Sessions</h2>
                     </div>
                    
@@ -1081,7 +1083,7 @@
                             </h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#ffe6ee">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹12000</del> ₹10200</h2>
                             
@@ -1098,13 +1100,13 @@
 
         }
 
-        if(therapy==90)
-        {
-           
+        if (therapy == 90) {
+            document.getElementById('package').style.backgroundImage = `url("image3.png")`;
+            document.getElementById('package').style.backgroundSize = 'cover';
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#84d4ab">
                         <h2 style="text-align: center;font-size: 25px;">Break The Barrier<br>1 Session</h2>
                     </div>
                    
@@ -1120,7 +1122,7 @@
                             <h5>	Aligning Expectations</h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#e4ecce">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price: ₹1000</h2>
                             
@@ -1134,7 +1136,7 @@
             
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#84d4ab">
                         <h2 style="text-align: center;font-size: 25px;">Well Being <br>5 Sessions</h2>
                     </div>
                     
@@ -1162,9 +1164,9 @@
                             <h5>		Validity: 4 Months
                             </h5>
                         </div>
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#e4ecce">
                         <div>
-                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹5000</del> ₹4500</h2>
+                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c;">Best Price:  <del>₹5000</del> ₹4500</h2>
                             
                         </div>
                     </div>
@@ -1177,7 +1179,7 @@
 
             <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#84d4ab">
                         <h2 style="text-align: center;font-size: 25px;">	Restructure<br>10 Sessions</h2>
                     </div>
                    
@@ -1213,9 +1215,9 @@
                             <h5>Validity: 10 Months </h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#e4ecce">
                         <div>
-                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹10000</del> ₹8500</h2>
+                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c;">Best Price:  <del>₹10000</del> ₹8500</h2>
                             
                         </div>
                     </div>
@@ -1229,13 +1231,13 @@
             document.getElementById('package').style.display = 'flex';
 
         }
-
-        if(therapy==120)
-        {
+        
+        if (therapy == 120) {
+            document.getElementById('package').style.backgroundImage = `url("image3.png")`;
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#84d4ab">
                         <h2 style="text-align: center;font-size: 25px;">Break The Barrier<br>1 Session</h2>
                     </div>
                    
@@ -1251,9 +1253,9 @@
                             <h5>	Aligning Expectations</h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#e4ecce">
                         <div>
-                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price: ₹1400</h2>
+                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c;">Best Price: ₹1400</h2>
                             
                         </div>
                     </div>
@@ -1265,7 +1267,7 @@
             
         <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#84d4ab">
                         <h2 style="text-align: center;font-size: 25px;">Well Being <br>5 Sessions</h2>
                     </div>
                     
@@ -1293,9 +1295,9 @@
                             <h5>		Validity: 4 Months
                             </h5>
                         </div>
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#e4ecce">
                         <div>
-                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹7000</del> ₹6300</h2>
+                            <h2 style="text-align: center;font-size: 28px;color:#7b7b7c;">Best Price:  <del>₹7000</del> ₹6300</h2>
                             
                         </div>
                     </div>
@@ -1308,7 +1310,7 @@
 
             <p>
                 <div class="outer">
-                    <div class="cyan">
+                    <div class="cyan" style="background-color:#84d4ab">
                         <h2 style="text-align: center;font-size: 25px;">	Restructure<br>10 Sessions</h2>
                     </div>
                    
@@ -1344,7 +1346,7 @@
                             <h5>Validity: 10 Months </h5>
                         </div>
                        
-                        <div class="peach" id="one" style="margin-bottom:20px;">
+                        <div class="peach" id="one" style="margin-bottom:20px;background-color:#e4ecce">
                         <div>
                             <h2 style="text-align: center;font-size: 28px;color:#7b7b7c">Best Price:  <del>₹14000</del> ₹12000</h2>
                             
@@ -1368,17 +1370,3 @@
 </script>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
