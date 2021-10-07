@@ -41,14 +41,15 @@
         width: 100%;
         justify-content: center;
         transition: all 2s ease-in-out;
-        background-image: url("image2.png");
+        background-image: url("image21.png");
         background-repeat: no-repeat;
         background-size: cover;
+        align-items: center;
 
     }
 
     #q1 h2 {
-        font-size: 62px;
+        font-size: 42px;
         color: rgb(46, 46, 160);
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
@@ -61,6 +62,7 @@
         margin: auto;
         width: 100%;
         justify-content: center;
+        align-items: center;
         display: none;
         background-image: url("image2.png");
         background-repeat: no-repeat;
@@ -69,7 +71,7 @@
     }
 
     #q2 h2 {
-        font-size: 62px;
+        font-size: 42px;
         color: rgb(46, 46, 160);
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
@@ -82,6 +84,7 @@
         width: 100%;
         justify-content: center;
         display: none;
+        /* margin-left:-67px; */
     }
 
     #q3 h2 {
@@ -93,7 +96,7 @@
     ul {
         display: flex;
         flex-direction: row;
-        width: 50%;
+        width: 70%;
         list-style: none;
         justify-content: space-between;
     }
@@ -111,7 +114,7 @@
 
     li:hover {
         /* background-color: rgb(46, 46, 160); */
-        color: transparent;
+        color: #274472;
         /* border: 1px solid white; */
         transform: scale(1.1);
         cursor: pointer;
@@ -122,18 +125,20 @@
         justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: end;
+        margin-left: -67px;
         /* flex-direction: column; */
     }
 
     .outer {
         transition: all 1s ease-in;
-        max-width: 430px;
+        max-width: 270px;
         border-radius: 20px;
         display: inline;
         margin: 10px 10px;
         border: 2px solid rgb(226, 223, 223);
         background-color: #fff;
-        min-width: 350px;
+        min-width: 200px;
 
 
 
@@ -211,6 +216,7 @@
         background-image: url(image1.png);
         background-repeat: no-repeat;
         background-size: cover;
+        margin-left: -67px;
     }
 
     @media screen and (max-width:1000px) {
@@ -311,7 +317,7 @@
         therapy = catnum;
         if (therapy == 1) {
             document.getElementById('q2').innerHTML = ` 
-            <h2>Choose Durations</h2>
+            <h2>Choose Your Durations</h2>
 
             <ul style="z-index:2">
                 <li onclick="dur(30)">30 Minutes </li>
@@ -323,7 +329,7 @@
         }
         else {
             document.getElementById('q2').innerHTML = ` 
-            <h2>Choose Durations</h2>
+            <h2>Choose Your Durations</h2>
 
             <ul style="z-index:2">
                 <li onclick="dur(60)">60 Minutes</li>
@@ -340,7 +346,7 @@
         if(therapy==3)
         {
             document.getElementById('q2').style.backgroundImage= `url("image3.png")`
-            document.getElementById('q2').style.backgroundPosition= `bottom`
+            // document.getElementById('q2').style.backgroundPosition= `bottom`
         }
         document.getElementById('q1').style.display = 'none';
         document.getElementById('q2').style.display = 'flex';
@@ -877,8 +883,9 @@
 
         }
         if (therapy == 80) {
-            document.getElementById('package').style.backgroundImage = `url("image0.png")`;
+            document.getElementById('package').style.backgroundImage = `url("14.png")`;
             document.getElementById('package').innerHTML = `
+       
         <p>
                 <div class="outer">
                     <div class="cyan" style="background-color:#fa98b0">
@@ -999,7 +1006,7 @@
 
 
         if (therapy == 110) {
-            document.getElementById('package').style.backgroundImage = `url("image0.png")`;
+            document.getElementById('package').style.backgroundImage = `url("14.png")`;
             document.getElementById('package').innerHTML = `
         <p>
                 <div class="outer">
@@ -1120,8 +1127,8 @@
         }
 
         if (therapy == 90) {
-            document.getElementById('package').style.backgroundImage = `url("image3.png")`;
-            document.getElementById('q2').style.backgroundPosition= `bottom`
+            document.getElementById('package').style.backgroundImage = `url("15.png")`;
+            document.getElementById('q2').style.backgroundPosition= `center`
             document.getElementById('package').style.backgroundSize = 'cover';
             document.getElementById('package').innerHTML = `
         <p>
@@ -1253,7 +1260,7 @@
         }
         
         if (therapy == 120) {
-            document.getElementById('package').style.backgroundImage = `url("image3.png")`;
+            document.getElementById('package').style.backgroundImage = `url("15.png")`;
             document.getElementById('q2').style.backgroundPosition= `bottom`
             document.getElementById('package').innerHTML = `
         <p>
